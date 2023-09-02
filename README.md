@@ -45,7 +45,7 @@ pip install -r requirements.txt
 ```
 
 ## Usage
-1. Download weights of the [pretrained VGGFace models](https://drive.google.com/drive/folders/1JwC02IGWyAh8_rn55vmUz3tsZnBz06KM?usp=drive_link) from ggdrive, and then add them to the 'verification_models/weights' directory
+1. Download weights of the [pretrained VGGFace models](https://drive.google.com/drive/folders/1-pEMok04-UqpeCi_yscUcIA6ytvxhvkG?usp=drive_link) from ggdrive, and then add them to the 'verification_models/weights' directory. Download weights and landmarks of the [pretrained liveness detection models](https://drive.google.com/drive/folders/1S6zLU8_Cgode7B7mfJWs9oforfAODaGB?usp=drive_link) from ggdrive, and then add them to the 'liveness_detection/landmarks' directory
 
 2. Using the PyQt5 Interface:
 ```bash
