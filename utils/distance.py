@@ -2,7 +2,7 @@ import numpy as np
 import torch
 
 
-def L1_Distance(x, y, reduction = 'mean'):
+def L1_Distance(x, y, reduction = 'sum'):
     
     assert reduction in ['sum', 'mean']
     
@@ -20,8 +20,9 @@ def Euclidean_Distance(x, y):
     )
     return dis
     
-def Cosine_Distance(x, y):
-    
+def Cosine_Distance(x: torch.Tensor, y: torch.Tensor):
+    x = x.view(-1)
+    y = y.view(-1)
     dot_product = torch.dot(x, y)
     
     norm_x = torch.norm(x.float())
@@ -29,14 +30,16 @@ def Cosine_Distance(x, y):
     
     dis = dot_product/(norm_x * norm_y)
     
-    return dis
+    rad = torch.math.acos(dis)
+    
+    return rad
 
 def findThreshold(model_name, distance_metric):
     base_threshold = {"cosine": 0.40, "euclidean": 0.55, "L1": 0.75}
 
     thresholds = {
-        "VGG-Face1": {"cosine": 0.40, "euclidean": 0.60, "L1": 0.86},
-        "VGG-Face2": {"cosine": 0.40, "euclidean": 0.60, "L1": 0.86},
+        "VGG-Face1": {"cosine": 0.40, "euclidean": 0.31, "L1": 1.1}, # L1: sum
+        "VGG-Face2": {"cosine": 0.40, "euclidean": 0.60, "L1": 1.4}, # In this case, it has not been tested yet
     }
 
     threshold = thresholds.get(model_name, base_threshold).get(distance_metric, 0.6)
