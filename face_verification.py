@@ -39,13 +39,12 @@ def face_matching(face1, face2, model: torch.nn.Module, distance_metric_name, mo
     result1 = model(face1)
     result2 = model(face2)
     
-    id1 = torch.argmax(result1, dim = 1)
-    id2 = torch.argmax(result2, dim = 1)
+    # id1 = torch.argmax(result1, dim = 1)
+    # id2 = torch.argmax(result2, dim = 1)
     
-    # print(id1, id2)
+    # # print(id1, id2)
     
-    return id1 == id2
-    
+    # return id1 == id2
     dis = distance_func(result1, result2)
     
     threshold = findThreshold(model_name = 'VGG-Face1', distance_metric = distance_metric_name)
