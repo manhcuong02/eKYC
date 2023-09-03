@@ -54,4 +54,4 @@ python3 main.py
 
 ## Results
 
-coming soon 
+[![](resources/background.jpg)](resources/record.mp4)
