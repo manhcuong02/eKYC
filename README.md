@@ -54,4 +54,4 @@ python3 main.py
 
 ## Results
 
-[![](resources/background.jpg)](resources/record.mp4)
+![](resources/record.gif)
