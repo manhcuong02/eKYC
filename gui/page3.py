@@ -126,7 +126,7 @@ class ChallengeWindow(QDialog):
             else:
                 text = f"Question {self.count_correct + 1}/3: {self.question[0]}"
             self.challenge_label.setText(text)
-            self.challenge_label.move(550, 650)
+            self.challenge_label.move(580, 650)
         
         if coordinates is not None:
             self.challenge_label.move(coordinates[0], coordinates[1])
