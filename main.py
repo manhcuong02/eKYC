@@ -16,8 +16,6 @@ from liveness_detection.face_orientation import FaceOrientationDetector
 from utils.functions import *
 from verification_models import *
 
-# from challenge_response import *
-
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()  
@@ -52,7 +50,6 @@ class MainWindow(QMainWindow):
         self.stacked_widget.addWidget(self.first_page)
         self.stacked_widget.addWidget(self.second_page)
         self.stacked_widget.addWidget(self.third_page)
-
         
     def verify(self):
         id_image = get_image(self.first_page.img_path)
