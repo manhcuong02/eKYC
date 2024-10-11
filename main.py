@@ -14,7 +14,7 @@ from liveness_detection.blink_detection import BlinkDetector
 from liveness_detection.emotion_prediction import EmotionPredictor
 from liveness_detection.face_orientation import FaceOrientationDetector
 from utils.functions import *
-from verification_models import *
+from verification_models import VGGFace2
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -31,7 +31,7 @@ class MainWindow(QMainWindow):
         
         self.mtcnn = MTCNN(device = self.device)
         
-        self.verification_model = VGGFace.load_model(device = self.device)
+        self.verification_model = VGGFace2.load_model(device = self.device)
         
         self.blink_detector = BlinkDetector()
         self.face_orientation_detector = FaceOrientationDetector()
@@ -55,7 +55,7 @@ class MainWindow(QMainWindow):
         id_image = get_image(self.first_page.img_path)
         verification_image = self.second_page.verification_image
 
-        verified = verify(id_image, verification_image, self.mtcnn, self.verification_model, model_name = "VGG-Face1")
+        verified = verify(id_image, verification_image, self.mtcnn, self.verification_model, model_name = "VGG-Face2")
 
         return verified        
 
