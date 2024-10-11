@@ -56,4 +56,4 @@ python3 main.py
 ```
 
 ## Results
-Due to concerns about my personal information, I kindly request that the video results be deleted
+Due to concerns about my personal information, I have deleted the video result from my repo
