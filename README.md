@@ -53,5 +53,4 @@ python3 main.py
 ```
 
 ## Results
-
-![](resources/record.gif)
+Due to concerns about my personal information, I kindly request that the video results be deleted
