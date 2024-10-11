@@ -1,4 +1,7 @@
 # eKYC 
+> Note: I have recently updated the code to be more compatible with vggface2 (though I haven't tested it yet). If you encounter any issues, please feel free to open an issue in the repository. I apologize for any inconvenience this may cause.
+
+----------------------------
 
 eKYC (Electronic Know Your Customer) is a project designed to electronically verify the identity of customers. This is an essential system to ensure authenticity and security in online transactions.
 
