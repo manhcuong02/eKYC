@@ -103,16 +103,10 @@ def face_transform(face, model_name = "base", device = 'cpu'):
         mean = (127.5, 127.5, 127.5)
         std = 1
         size = (64, 64)
-    elif model_name == "VGG-Face1":
-        # mean = (129.1863, 104.7624, 93.5940)
-        mean = (93.5940, 104.7624, 129.1863)
-        std = 1
-        size = (224, 224)
     elif model_name == "VGG-Face2":
-        # mean = (131.0912, 103.8827, 91.4953)
-        mean = (91.4953, 103.8827, 131.0912)
-        size = (224, 224)
-        std = 1
+        mean = (127.5, 127.5, 127.5)
+        size = (160, 160)
+        std = 128
     
     face = cv.resize(face, size)
     
