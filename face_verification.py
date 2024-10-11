@@ -5,7 +5,7 @@ from PIL import Image
 from facenet.models.mtcnn import MTCNN
 from utils.distance import *
 from utils.functions import *
-from verification_models import VGGFace
+from verification_models import VGGFace2
 
 
 def face_matching(face1, face2, model: torch.nn.Module, distance_metric_name, model_name, device = 'cpu'):
@@ -23,6 +23,8 @@ def face_matching(face1, face2, model: torch.nn.Module, distance_metric_name, mo
     Returns:
         bool: True if the faces are considered a match, False otherwise.
     """
+    assert model_name == "VGG-Face2", f"{model_name} is not supported"
+    
     distance_metric = {
         "cosine": Cosine_Distance,
         "L1": L1_Distance,
@@ -47,7 +49,7 @@ def face_matching(face1, face2, model: torch.nn.Module, distance_metric_name, mo
     # return id1 == id2
     dis = distance_func(result1, result2)
     
-    threshold = findThreshold(model_name = 'VGG-Face1', distance_metric = distance_metric_name)
+    threshold = findThreshold(model_name = model_name, distance_metric = distance_metric_name)
     print(dis)
     return dis < threshold
 
@@ -84,7 +86,7 @@ if __name__ == '__main__':
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     
     detector_model = MTCNN(device = device)
-    verifier_model = VGGFace.load_model(device = device)
+    verifier_model = VGGFace2.load_model(device = device)
     
     results = verify(image1, image2, detector_model, verifier_model)
     
