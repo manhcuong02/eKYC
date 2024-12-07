@@ -1,5 +1,7 @@
 # eKYC 
-> Note: I have recently updated the code to be more compatible with vggface2 (though I haven't tested it yet). If you encounter any issues, please feel free to open an issue in the repository. I apologize for any inconvenience this may cause.
+
+## Update
+- 7/12/2024: The source code has been rewritten and tested to be compatible with the VGGFace2 model (InceptionResnetV1). However, I have only tested it using Norm L2 for face matching.
 
 ----------------------------
 
@@ -56,4 +58,6 @@ python3 main.py
 ```
 
 ## Results
-Due to concerns about my personal information, I have deleted the video result from my repo
+
+> [!Note]
+> Due to concerns about my personal information, I have deleted the video result from my repo
